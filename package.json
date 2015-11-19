@@ -1,0 +1,29 @@
+{
+  "name": "museum_app",
+  "version": "1.0.0",
+  "description": "Pair Project Week 8 Day 4 Lab",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Devendavies/museum_pair_project.git"
+  },
+  "keywords": [
+    "museum",
+    "pair",
+    "project",
+    "js",
+    "html",
+    "css",
+    "ajax"
+  ],
+  "author": "Deven Davies & partner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Devendavies/museum_pair_project/issues"
+  },
+  "homepage": "https://github.com/Devendavies/museum_pair_project#readme"
+}
