@@ -4,9 +4,9 @@ let app = express();
 let logger = require('morgan');
 let bodyParser = require('body-parser');
 app.use(express.static('./public'));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.listen(3000);
-// let db = mongoose.connection;
 
 let mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/museumrApp');

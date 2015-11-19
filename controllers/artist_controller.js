@@ -6,12 +6,18 @@ let Artist = require('../models/artists');
 
 router.route('/')
   .get((req, res, next) => {
-
-    res.send(JSON.parse(Artists));
+    Artist.find({}, function(err, artists) {
+      res.json(artists);
+      next();
+    });
   })
-
   .post((req, res, next) => {
-
+    console.log(req.body);
+    Artist.create({req.body}, function(err, createdArtist) {
+      console.log("artist was created");
+    })
+    res.send(req.body);
+    next();
   });
 
 router.route('/:id')
@@ -21,11 +27,3 @@ router.route('/:id')
   })
 
 module.exports = router;
-
-// index: The user should be able to view all the artists.
-//
-// show: The user should be able to view all the information for an artist.
-// edit/update: The user should be able to edit the information for an artist.
-// ?: The user should be able to show a single artist and his/her paintings.
-// new/create: The user should be able to add a new artist.
-// destroy: The user should be able to delete an artist.
