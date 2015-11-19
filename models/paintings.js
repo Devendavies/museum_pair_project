@@ -9,6 +9,6 @@ let paintingSchema = new mongoose.Schema({
   updated_at: Date
 });
 
-let painting = mongoose.model('painting', paintingSchema);
+let Painting = mongoose.model('Painting', paintingSchema);
 
-module.exports = painting;
+module.exports = Painting;

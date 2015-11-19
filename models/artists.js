@@ -8,9 +8,13 @@ let artistSchema = new mongoose.Schema({
   birthYear: Number,
   description: String,
   created_at: Date,
-  updated_at: Date
+  updated_at: Date,
+  paintings: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Painting'
+  }]
 });
 
-let artist = mongoose.model('artist', artistSchema);
+let Artist = mongoose.model('Artist', artistSchema);
 
-module.exports = artist;
+module.exports = Artist;
