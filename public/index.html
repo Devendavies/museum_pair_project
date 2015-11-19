@@ -32,9 +32,16 @@
 
   <template id="artist-template">
     {{#each artists}}
-      <div class="">  
+      <div class="artist">
         <h1>{{name}}</h1>
-        <img src="{{img_url}}" alt="" />
+        <div class="artist-image">
+          <img src="{{img_url}}" alt=""/>
+        </div>
+        <div class="artist-info">
+          <p>{{birthYear}}</p>
+          <p>{{description}}</p>
+          <p>{{paintings}}</p>
+        </div>
       </div>
     {{/each}}
   </template>

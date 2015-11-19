@@ -7,18 +7,19 @@ let Artist = require('../models/artists');
 router.route('/')
   .get((req, res, next) => {
     Artist.find({}, function(err, artists) {
-      res.json(artists);
+      res.send(artists);
       next();
     });
   })
+
+router.route('/create')
   .post((req, res, next) => {
     console.log(req.body);
     Artist.create({req.body}, function(err, createdArtist) {
-      console.log("artist was created");
-    })
-    res.send(req.body);
-    next();
-  });
+      res.send(createdArtist);
+      next();
+    });
+  })
 
 router.route('/:id')
   .get((req,res, next) => {
