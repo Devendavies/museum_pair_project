@@ -13,7 +13,8 @@ router.route('/')
   })
   .post((req, res, next) => {
     console.log(req.body);
-    Artist.create({req.body}, function(err, createdArtist) {
+    var newartist = new Artist(req.body);
+    Artist.save(newartist, function(err, createdArtist) {
       console.log("artist was created");
     })
     res.send(req.body);
