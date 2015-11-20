@@ -49,26 +49,27 @@ $(document).ready(function() {
     })
   });
 
-  // // Get New Artist Parameters
-  // var title       = ;
-  // var image       = ;
-  // var year_made   = ;
-  // var created_at  = Date.now;
-  //
-  // // Create New Artist Based On Params
-  // $.ajax({
-  //   type: "POST",
-  //   url:  "/paintings",
-  //   data: {
-  //     title: title,
-  //     img_url: image,
-  //     year_made: year,
-  //     created_at: created_at,
-  //     // Artist?
-  //   }
-  // }).done(function(createdPainting) {
-  //   console.log(createdPainting);
-  // });
+  // Get New Paintings
+  $('.new-artist').click(function(event) {
+  // Get New Artist Parameters
+    var title       = $('#input-title').val();
+    var image       = $('#input-image').val();
+    var year_made   = $('#input-year_made').val();
+    var created_at  = Date.now;
 
-
+    // Create New Painting Based On Params
+    $.ajax({
+      type: "POST",
+      url:  "/paintings",
+      data: {
+        title: title,
+        img_url: image,
+        year_made: year,
+        created_at: created_at,
+        // Artist?
+      }
+    }).done(function(createdPainting) {
+      console.log(createdPainting);
+    });
+  });
 });
