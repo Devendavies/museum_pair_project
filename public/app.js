@@ -1,6 +1,5 @@
 $(document).ready(function() {
   $('.artist-link').click(function(event) {
-    console.log('working');
 
     $.get('/artists').done(function(data) {
       $('.response').empty();
@@ -9,9 +8,7 @@ $(document).ready(function() {
       var template = Handlebars.compile(source)
       $('.response').append(template({artists: data}));
     })
-
   });
-
 
   $('.new-artist').click(function(event) {
     $('.response').empty();
@@ -21,8 +18,8 @@ $(document).ready(function() {
     $('.form-div').append(template);
   });
 
-
-  $('.new-artist').click(function(event) {
+  $('body').on('click', '.new-artist-submit', function(event) {
+    console.log('click')
     // Get New Artist Parameters
     var name        = $('#input-name').val();
     var picture     = $('#input-picture').val();
@@ -58,12 +55,3 @@ $(document).ready(function() {
   });
 
 });
-
-
-// $.ajax({
-//   type: "POST",
-//   url: "/artists",
-//   data: {name: "nicole", img_url: "lol", nationality: "lol"}
-// }).done(function(createdArtist) {
-//   console.log(createdArtist);
-// });

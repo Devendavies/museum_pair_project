@@ -12,9 +12,14 @@ router.route('/')
     });
   })
 
-router.route('/create')
   .post((req, res, next) => {
-    console.log(req.body);
+    var newartist = new Artist(req.body);
+      // WHAT BEN GAVE US
+    newartist.save(function(err, createdArtist) {
+      console.log("artist was created");
+    })
+    res.send(req.body);
+    next();
     // Artist.create({req.body}, function(err, createdArtist) {
     //   res.send(createdArtist);
     //   next();
