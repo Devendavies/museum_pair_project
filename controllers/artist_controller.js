@@ -14,6 +14,7 @@ router.route('/')
   .post((req, res, next) => {
     console.log(req.body);
     var newartist = new Artist(req.body);
+      // WHAT BEN GAVE US
     Artist.save(newartist, function(err, createdArtist) {
       console.log("artist was created");
     })
