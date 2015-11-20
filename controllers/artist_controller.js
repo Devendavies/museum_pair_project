@@ -15,10 +15,10 @@ router.route('/')
 router.route('/create')
   .post((req, res, next) => {
     console.log(req.body);
-    Artist.create({req.body}, function(err, createdArtist) {
-      res.send(createdArtist);
-      next();
-    });
+    // Artist.create({req.body}, function(err, createdArtist) {
+    //   res.send(createdArtist);
+    //   next();
+    // });
   })
 
 router.route('/:id')
